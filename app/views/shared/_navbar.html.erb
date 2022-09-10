@@ -16,9 +16,28 @@
           <%= link_to "Bishasha", root_path, class: "nav-link" %>
         </li>
       </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if Current.user %>
+          <li class='nav-link'>
+            <span class='nav-link'>
+              <%= Current.user.email %>
+            </span>
+          </li>
+          <li class='nav-link'>
+            <%= button_to 'Logout', logout_path, method: :delete, class: 'nav-link' %>
+          </li>
+          <% else %>
+          <li class='nav-link'>
+            <%= link_to 'signup', signup_path, class: 'nav-link' %>
+          </li>
+          <li class='nav-link'>
+            <%= link_to 'login', signin_path, class: 'nav-link' %>
+          </li>
+        
+        <% end %>
+        
+      </ul>
+     
     </div>
   </div>
 </nav>
