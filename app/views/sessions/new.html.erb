@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center justify-content-center">
+  <h1> Log_in </h1>
+</div>
+
+<%= form_with url: signin_path do |f| %>
+  <div class="mb-3 row">
+    <%= f.label :email, "email" %>
+    <%= f.text_field :email, class: "form-control"  %>
+  </div>
+  <div class="mb-3 row">
+    <%= f.label :password, "password" %>
+    <%= f.password_field :password, class: "form-control"  %>
+  </div>
+
+  <div class="mb-3 row">
+    <%= f.submit "Log in", class:" btn btn-primary"%>
+  </div>
+<% end %>
