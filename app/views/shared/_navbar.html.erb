@@ -20,7 +20,7 @@
         <% if Current.user %>
           <li class='nav-link'>
             <span class='nav-link'>
-              <%= Current.user.email %>
+              <%= link_to Current.user.email, edit_password_path %>
             </span>
           </li>
           <li class='nav-link'>
