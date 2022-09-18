@@ -1,9 +1,9 @@
 <h1> Signup page</h1>
 
 <%= form_with model: @user, url: signup_path do |f| %>
-  <% if @user.errors.any? %>
+  <% if form.object.errors.any? %>
     <div class="alert alert-danger">
-      <% @user.errors.full_messages.each do |err| %>%
+      <% form.objecterrors.full_messages.each do |err| %>%
         <div> <%= err %></div>       
       <% end %>
     </div>
