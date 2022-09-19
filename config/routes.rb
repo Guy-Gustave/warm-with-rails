@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   get "signin", to: "sessions#new"
   post "signin", to: "sessions#create"
+
+  get "password/reset", to: "password_reset#new"
+  get "password/reset", to: "password_reset#create"
   
   delete "logout", to: "sessions#destroy"
 end
