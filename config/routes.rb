@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   post "signin", to: "sessions#create"
 
   get "password/reset", to: "password_reset#new"
-  get "password/reset", to: "password_reset#create"
+  post "password/reset", to: "password_reset#create"
+
+  get "password/reset/edit", to: "password_reset#edit"
+  patch "password/reset/edit", to: "password_reset#update"
   
   delete "logout", to: "sessions#destroy"
 end
