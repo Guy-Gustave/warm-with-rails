@@ -2,7 +2,9 @@
   <h1> Log_in </h1>
 </div>
 
+
 <%= form_with url: signin_path do |f| %>
+  
   <div class="mb-3 row">
     <%= f.label :email, "email" %>
     <%= f.text_field :email, class: "form-control"  %>
