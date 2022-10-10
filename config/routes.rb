@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "about", to: "about#index"
   root to: "main#index"
+  get "about", to: "about#index"
 
   get "password", to: "passwords#edit", as: :edit_password
   patch "password", to: "passwords#update"
@@ -22,5 +22,9 @@ Rails.application.routes.draw do
   patch "password/reset/edit", to: "password_reset#update"
   
   delete "logout", to: "sessions#destroy"
+
+  get "auth/twitter/callback", to: "omniauth_callbacks#twitter"
+
+  resources :twitter_accounts
 end
  
